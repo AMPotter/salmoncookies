@@ -10,13 +10,13 @@ var pdxAirportObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            pdxAirportObj.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         }        
     },
     calculateTotal: function() {
         for (var i = 0; i < this.hourlySales.length; i++) {
-            pdxAirportObj.salesTotal += this.hourlySales[i];
+            this.salesTotal += this.hourlySales[i];
             console.log(this.salesTotal);
         }
     },
@@ -32,14 +32,14 @@ var pioneerSquareObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
     calculateTotal: function() {
         for (var i = 0; i < this.hourlySales.length; i++) {
             this.salesTotal += this.hourlySales[i];
-            console.log(this.salesTotal;)
+            console.log(this.salesTotal);
         }
     },
 };
@@ -54,14 +54,14 @@ var powellsObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
     calculateTotal: function() {
         for (var i = 0; i < this.hourlySales.length; i++) {
             this.salesTotal += this.hourlySales[i];
-            console.log(this.salesTotal;)
+            console.log(this.salesTotal);
         }
     },
 };
@@ -76,14 +76,14 @@ var stJohnsObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
     calculateTotal: function() {
         for (var i = 0; i < this.hourlySales.length; i++) {
             this.salesTotal += this.hourlySales[i];
-            console.log(this.salesTotal;)
+            console.log(this.salesTotal);
         }
     },
 
@@ -99,14 +99,14 @@ var waterfrontObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
     calculateTotal: function() {
         for (var i = 0; i < this.hourlySales.length; i++) {
             this.salesTotal += this.hourlySales[i];
-            console.log(this.salesTotal;)
+            console.log(this.salesTotal);
         }
     },
 };
