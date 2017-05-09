@@ -22,19 +22,19 @@ var pdxAirportObj = {
         }
     },
     populateLocation: function() {
-        var newEl = document.createElement('lh');
+        var newEl = document.createElement('lh')[this.objectNumber];
         var newText = document.createTextNode(this.location);
         newEl.appendChild(newText);
-        var position = document.getElementsByTagName('lh')[0];
+        var position = document.getElementsByTagName('lh')[this.objectNumber];
         position.appendChild(newEl);
     },
     populateSales: function() {
-        for (var i = 0; i < this.hourlySales.length; i++) {
-        var newEl = document.createElement('li');
-        var newText = document.createTextNode(this.hourlySales[i]);
-        newEl.appendChild(newText);
-        var position = document.getElementsByTagName('li')[i];
-        position.appendChild(newEl);
+        for (var i = 0; i < this.hoursOpen; i++) {
+            var newEl = document.createElement('ul')[this.objectNumber];
+            var newText = document.createTextNode(this.hourlySales[i]);
+            newEl.appendChild(newText);
+            var position = document.getElementsByTagName('li')[i];
+            position.appendChild(newEl);
         }
     }
 };
@@ -60,6 +60,22 @@ var pioneerSquareObj = {
             console.log(this.salesTotal);
         }
     },
+    populateLocation: function() {
+        var newEl = document.createElement('lh');
+        var newText = document.createTextNode(this.location);
+        newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[0];
+        position.appendChild(newEl);
+    },
+    populateSales: function() {
+        for (var i = 0; i < this.hoursOpen.length; i++) {
+            var newEl = document.createElement('li');
+            var newText = document.createTextNode(this.hourlySales[i]);
+            newEl.appendChild(newText);
+            var position = document.getElementsByTagName('li')[i];
+            position.appendChild(newEl);
+        }
+    }
 };
 
 var powellsObj = {
@@ -83,6 +99,22 @@ var powellsObj = {
             console.log(this.salesTotal);
         }
     },
+        populateLocation: function() {
+        var newEl = document.createElement('lh');
+        var newText = document.createTextNode(this.location);
+        newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[0];
+        position.appendChild(newEl);
+    },
+    populateSales: function() {
+        for (var i = 0; i < this.hoursOpen.length; i++) {
+            var newEl = document.createElement('li');
+            var newText = document.createTextNode(this.hourlySales[i]);
+            newEl.appendChild(newText);
+            var position = document.getElementsByTagName('li')[i];
+            position.appendChild(newEl);
+        }
+    }
 };
 
 var stJohnsObj = {
@@ -106,7 +138,22 @@ var stJohnsObj = {
             console.log(this.salesTotal);
         }
     },
-
+    populateLocation: function() {
+        var newEl = document.createElement('lh');
+        var newText = document.createTextNode(this.location);
+        newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[0];
+        position.appendChild(newEl);
+    },
+    populateSales: function() {
+        for (var i = 0; i < this.hoursOpen.length; i++) {
+            var newEl = document.createElement('li');
+            var newText = document.createTextNode(this.hourlySales[i]);
+            newEl.appendChild(newText);
+            var position = document.getElementsByTagName('li')[i];
+            position.appendChild(newEl);
+        }
+    }
 };
 
 var waterfrontObj = {
@@ -130,5 +177,50 @@ var waterfrontObj = {
             console.log(this.salesTotal);
         }
     },
+    populateLocation: function() {
+        var newEl = document.createElement('lh');
+        var newText = document.createTextNode(this.location);
+        newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[0];
+        position.appendChild(newEl);
+    },
+    populateSales: function() {
+        for (var i = 0; i < this.hoursOpen.length; i++) {
+            var newEl = document.createElement('li');
+            var newText = document.createTextNode(this.hourlySales[i]);
+            newEl.appendChild(newText);
+            var position = document.getElementsByTagName('li')[i];
+            position.appendChild(newEl);
+        }
+    }
 };
 
+//I'm really tired of calling these manually when I'm testing this thing, so:
+
+//Call functions to generate estimated sales.
+pdxAirportObj.salesEstimate();
+pioneerSquareObj.salesEstimate();
+powellsObj.salesEstimate();
+stJohnsObj.salesEstimate();
+waterfrontObj.salesEstimate();
+
+//Calculate totals
+pdxAirportObj.calculateTotal();
+pioneerSquareObj.calculateTotal();
+powellsObj.calculateTotal();
+stJohnsObj.calculateTotal();
+waterfrontObj.calculateTotal();
+
+//Create/populate <lh> with location names
+pdxAirportObj.populateLocation();
+pioneerSquareObj.populateLocation();
+powellsObj.populateLocation();
+stJohnsObj.populateLocation();
+waterfrontObj.populateLocation();
+
+//Create/populate <li> with list of sales by hour
+pdxAirportObj.populateSales();
+pioneerSquareObj.populateSales();
+powellsObj.populateSales();
+stJohnsObj.populateSales();
+waterfrontObj.populateSales();
