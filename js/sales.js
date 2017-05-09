@@ -1,6 +1,7 @@
 'use strict';
 
 var pdxAirportObj = {
+    objectNumber: 0,
     location: 'PDX Airport',
     minCustomers: 23,
     maxCustomers: 65,
@@ -10,7 +11,7 @@ var pdxAirportObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         }        
     },
@@ -20,9 +21,26 @@ var pdxAirportObj = {
             console.log(this.salesTotal);
         }
     },
+    populateLocation: function() {
+        var newEl = document.createElement('lh');
+        var newText = document.createTextNode(this.location);
+        newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[0];
+        position.appendChild(newEl);
+    },
+    populateSales: function() {
+        for (var i = 0; i < this.hourlySales.length; i++) {
+        var newEl = document.createElement('li');
+        var newText = document.createTextNode(this.hourlySales[i]);
+        newEl.appendChild(newText);
+        var position = document.getElementsByTagName('li')[i];
+        position.appendChild(newEl);
+        }
+    }
 };
 
 var pioneerSquareObj = {
+    objectNumber: 1,
     location: 'Pioneer Square',
     minCustomers: 3,
     maxCustomers: 24,
@@ -32,7 +50,7 @@ var pioneerSquareObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
@@ -45,6 +63,7 @@ var pioneerSquareObj = {
 };
 
 var powellsObj = {
+    objectNumber: 2,
     location: 'Powell\'s',
     minCustomers: 11,
     maxCustomers: 38,
@@ -54,7 +73,7 @@ var powellsObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
@@ -67,6 +86,7 @@ var powellsObj = {
 };
 
 var stJohnsObj = {
+    objectNumber: 3,
     location: 'St. John\'s',
     minCustomers: 20,
     maxCustomers: 38,
@@ -76,7 +96,7 @@ var stJohnsObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
@@ -90,6 +110,7 @@ var stJohnsObj = {
 };
 
 var waterfrontObj = {
+    objectNumber:4,
     location: 'Waterfront',
     minCustomers: 2,
     maxCustomers: 16,
@@ -99,7 +120,7 @@ var waterfrontObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) * this.salesAverage + this.minCustomers));
+            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers));
             console.log(this.hourlySales);
         } 
     },
@@ -110,3 +131,4 @@ var waterfrontObj = {
         }
     },
 };
+
