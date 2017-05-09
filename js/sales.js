@@ -11,29 +11,27 @@ var pdxAirportObj = {
     salesTotal: 0,
     salesEstimate: function() {
         for (var i = 0; i < this.hoursOpen; i++) {
-            this.hourlySales.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers));
-            console.log(this.hourlySales);
+            var randomSales = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) * this.salesAverage + this.minCustomers);
+            this.hourlySales.push(randomSales);
         }        
     },
     calculateTotal: function() {
         for (var i = 0; i < this.hourlySales.length; i++) {
             this.salesTotal += this.hourlySales[i];
-            console.log(this.salesTotal);
+            // console.log(this.salesTotal);
         }
     },
     populateLocation: function() {
-        var newEl = document.createElement('lh')[this.objectNumber];
-        var newText = document.createTextNode(this.location);
-        newEl.appendChild(newText);
+        var newText = document.createTextNode(this.location); //Waterfront
         var position = document.getElementsByTagName('lh')[this.objectNumber];
-        position.appendChild(newEl);
+        position.appendChild(newText);
     },
     populateSales: function() {
-        for (var i = 0; i < this.hoursOpen; i++) {
-            var newEl = document.createElement('ul')[this.objectNumber];
+        for (var i = 0; i < this.hourlySales.length; i++) {
+            var newEl = document.createElement('li');
             var newText = document.createTextNode(this.hourlySales[i]);
             newEl.appendChild(newText);
-            var position = document.getElementsByTagName('li')[i];
+            var position = document.getElementsByTagName('ul')[this.objectNumber];
             position.appendChild(newEl);
         }
     }
@@ -61,18 +59,16 @@ var pioneerSquareObj = {
         }
     },
     populateLocation: function() {
-        var newEl = document.createElement('lh');
         var newText = document.createTextNode(this.location);
-        newEl.appendChild(newText);
-        var position = document.getElementsByTagName('lh')[0];
-        position.appendChild(newEl);
+        var position = document.getElementsByTagName('lh')[this.objectNumber];
+        position.appendChild(newText);
     },
     populateSales: function() {
-        for (var i = 0; i < this.hoursOpen.length; i++) {
+        for (var i = 0; i < this.hourlySales.length; i++) {
             var newEl = document.createElement('li');
             var newText = document.createTextNode(this.hourlySales[i]);
             newEl.appendChild(newText);
-            var position = document.getElementsByTagName('li')[i];
+            var position = document.getElementsByTagName('ul')[this.objectNumber];
             position.appendChild(newEl);
         }
     }
@@ -99,19 +95,17 @@ var powellsObj = {
             console.log(this.salesTotal);
         }
     },
-        populateLocation: function() {
-        var newEl = document.createElement('lh');
-        var newText = document.createTextNode(this.location);
-        newEl.appendChild(newText);
-        var position = document.getElementsByTagName('lh')[0];
-        position.appendChild(newEl);
+    populateLocation: function() {
+        var newText = document.createTextNode(this.location);        // newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[this.objectNumber];
+        position.appendChild(newText);
     },
     populateSales: function() {
-        for (var i = 0; i < this.hoursOpen.length; i++) {
+        for (var i = 0; i < this.hourlySales.length; i++) {
             var newEl = document.createElement('li');
             var newText = document.createTextNode(this.hourlySales[i]);
             newEl.appendChild(newText);
-            var position = document.getElementsByTagName('li')[i];
+            var position = document.getElementsByTagName('ul')[this.objectNumber];
             position.appendChild(newEl);
         }
     }
@@ -139,18 +133,16 @@ var stJohnsObj = {
         }
     },
     populateLocation: function() {
-        var newEl = document.createElement('lh');
-        var newText = document.createTextNode(this.location);
-        newEl.appendChild(newText);
-        var position = document.getElementsByTagName('lh')[0];
-        position.appendChild(newEl);
+        var newText = document.createTextNode(this.location);        // newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[this.objectNumber];
+        position.appendChild(newText);
     },
     populateSales: function() {
-        for (var i = 0; i < this.hoursOpen.length; i++) {
+        for (var i = 0; i < this.hourlySales.length; i++) {
             var newEl = document.createElement('li');
             var newText = document.createTextNode(this.hourlySales[i]);
             newEl.appendChild(newText);
-            var position = document.getElementsByTagName('li')[i];
+            var position = document.getElementsByTagName('ul')[this.objectNumber];
             position.appendChild(newEl);
         }
     }
@@ -178,18 +170,16 @@ var waterfrontObj = {
         }
     },
     populateLocation: function() {
-        var newEl = document.createElement('lh');
-        var newText = document.createTextNode(this.location);
-        newEl.appendChild(newText);
-        var position = document.getElementsByTagName('lh')[0];
-        position.appendChild(newEl);
+        var newText = document.createTextNode(this.location);        // newEl.appendChild(newText);
+        var position = document.getElementsByTagName('lh')[this.objectNumber];
+        position.appendChild(newText);
     },
     populateSales: function() {
-        for (var i = 0; i < this.hoursOpen.length; i++) {
+        for (var i = 0; i < this.hourlySales.length; i++) {
             var newEl = document.createElement('li');
             var newText = document.createTextNode(this.hourlySales[i]);
             newEl.appendChild(newText);
-            var position = document.getElementsByTagName('li')[i];
+            var position = document.getElementsByTagName('ul')[this.objectNumber];
             position.appendChild(newEl);
         }
     }
