@@ -17,7 +17,8 @@ function Store (location, minCustomers, maxCustomers, salesAverage) {
     this.salesEstimate();
     this.calculateTotal();
     this.populateLocation();
-    this.populateSales();
+    this.populateFooter();
+    // this.populateSales();
 }
 
 //define universal values
@@ -55,8 +56,20 @@ Store.prototype.populateLocation = function() {
     newTH.appendChild(newTextNode);
 };
 
+//populate sales total
+Store.prototype.populateFooter = function() {
+    var getTF = document.getElementById('totalrow');
+    console.log('populate footer');
+    var newTH = document.createElement('th');
+    var newTextNode = document.createTextNode(this.salesTotal);
+    getTF.appendChild(newTH);
+
+
+    newTH.appendChild(newTextNode);
+}
+
 //populate sales figures
-Store.prototype.populateSales = function() {
+function populateSales() {
     var tableBody = document.getElementById('tbody'); //link to table body, maybe this works??
     for (var i = 0; i < hoursArray.length; i++) { //Loop through array of hours
         console.log('looping through popSales');
@@ -79,6 +92,7 @@ Store.prototype.populateSales = function() {
     }
 };
 
+
         // console.log('looping through popSale');
         // var newEl = document.createElement('tr')[i]; //create table row
         // var newText = document.createTextNode(this.hourlySales[i]); //make text node with hourly sales
@@ -93,6 +107,9 @@ var pioneerSquareObj = new Store ('Pioneer Square', 3, 24, 1.2);
 var powellsObj = new Store ('Powell\'s', 11, 38, 3.7);
 var stJohnsObj = new Store ('St. John\'s', 20, 38, 2.3);
 var waterfrontObj = new Store ('Waterfront', 2, 16, 4.6);
+
+populateSales();
+
 // pdxAirportObj.populateSales();
 // pioneerSquareObj.populateSales();
 // powellsObj.populateSales();
