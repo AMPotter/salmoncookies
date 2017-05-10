@@ -58,21 +58,21 @@ Store.prototype.populateLocation = function() {
 //populate sales figures
 Store.prototype.populateSales = function() {
     for (var i = 0; i < hoursArray; i++) { //Loop through array of hours
+        var tableBody = document.getElementById('tbody'); //link to table body, maybe this works??
         var newTR = document.createElement('tr'); //create table row
         var newTD = document.createElement('td'); //create table data
         var newTextNode = document.createTextNode(hoursArray[i]); //create text node containing current index of hours array
-        newTD.appendChild(newTextNode); //append text node to the table data cell
+        tableBody.appendChild(newTR); //  Just trying this out??
         newTR.appendChild(newTD); //append the data cell to the table row
+        newTD.appendChild(newTextNode); //append text node to the table data cell
 
         
         for (var h = 0; h < storesArray; h++) {
-            var tableBody = document.getElementById('tableBody'); //link to table body
             var salesTD = document.createElement('td'); //create sales data cell
-            var cellData = storesArray[h].hoursArray[i]; //create data FOR the cell // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
+            var cellData = storesArray[h].hourlySales[i]; //create data FOR the cell // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
             var salesTextNode = document.createTextNode(cellData); //create text node with cell data in it
-            tableBody.appendChild(newTR);
-            salesTD.appendChild(salesTextNode); //append text node to data cell
             newTR.appendChild(salesTD); //append data cell to table row
+            salesTD.appendChild(salesTextNode); //append text node to data cell
         }
     }
 };
