@@ -11,19 +11,20 @@ function Store (location, minCustomers, maxCustomers, salesAverage) {
     this.minCustomers = minCustomers;
     this.maxCustomers = maxCustomers;
     this.salesAverage = salesAverage;
+    this.hourlySales = [];
     //upon creation, do these
     storesArray.push(this);
     this.salesEstimate();
     this.calculateTotal();
     this.populateLocation();
-    // this.populateSales();
-};
+    this.populateSales();
+}
 
 //define universal values
 
-Store.prototype.hoursOpen = 14;
+Store.prototype.hoursOpen = hoursArray.length;
 Store.prototype.salesTotal = 0;
-Store.prototype.hourlySales = [];
+// Store.prototype.hourlySales = [];
 
 //define object class functions
 
@@ -46,25 +47,40 @@ Store.prototype.calculateTotal = function() {
 
 //populate location name
 Store.prototype.populateLocation = function() {
-        console.log('looping through popLoc');
-        var getTR = document.getElementsByTagName('tr')[0];
-        var newTH = document.createElement('th');
-        var newTextNode = document.createTextNode(this.location);        // getTR.appendChild(newTextNode);
-        getTR.appendChild(newTH);
-        newTH.appendChild(newTextNode);
+    console.log('looping through popLoc');
+    var getTR = document.getElementsByTagName('tr')[0];
+    var newTH = document.createElement('th');
+    var newTextNode = document.createTextNode(this.location);        // getTR.appendChild(newTextNode);
+    getTR.appendChild(newTH);
+    newTH.appendChild(newTextNode);
 };
 
 //populate sales figures
 Store.prototype.populateSales = function() {
-    for (var i = 0; i < this.hourlySales.length; i++) {
-        console.log('looping through popSale');
-        var newEl = document.createElement('tr')[i]; //create table row
-        var newText = document.createTextNode(this.hourlySales[i]); //make text node with hourly sales
-        newEl.appendChild(newText); //put hourly sales text into table row
-        var position = document.getElementsByTagName('tbody')[i];
-        position.appendChild(newEl);
+    for (var i = 0; i < hoursArray; i++) { //Loop through array of hours
+        var newTR = document.createElement('tr'); //create table row
+        var newTD = document.createElement('td'); //create table data
+        var newTextNode = document.createTextNode(hoursArray[i]); //create text node containing current index of hours array
+        newTD.appendChild(newTextNode); //append text node to the table data cell
+        newTR.appendChild(newTD); //append the data cell to the table row
+
+        
+        for (var h = 0; h < storesArray; h++) {
+            var salesTD = document.createElement('td');
+            var cellData = storesArray[h].hoursArray[i]; // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
+            var salesTextNode = document.createTextNode(cellData);
+            salesTD.appendChild(salesTextNode);
+            newTR.appendChild(salesTD);
+        }
     }
 };
+
+        // console.log('looping through popSale');
+        // var newEl = document.createElement('tr')[i]; //create table row
+        // var newText = document.createTextNode(this.hourlySales[i]); //make text node with hourly sales
+        // newEl.appendChild(newText); //put hourly sales text into table row
+        // var position = document.getElementsByTagName('tbody')[i];
+        // position.appendChild(newEl);
 
 //create object instances for store locations
 
@@ -73,11 +89,11 @@ var pioneerSquareObj = new Store ('Pioneer Square', 3, 24, 1.2);
 var powellsObj = new Store ('Powell\'s', 11, 38, 3.7);
 var stJohnsObj = new Store ('St. John\'s', 20, 38, 2.3);
 var waterfrontObj = new Store ('Waterfront', 2, 16, 4.6);
-pdxAirportObj.populateSales();
-pioneerSquareObj.populateSales();
-powellsObj.populateSales();
-stJohnsObj.populateSales();
-waterfrontObj.populateSales();
+// pdxAirportObj.populateSales();
+// pioneerSquareObj.populateSales();
+// powellsObj.populateSales();
+// stJohnsObj.populateSales();
+// waterfrontObj.populateSales();
 
 //////////////////////Outdated Obj Declarations///////////////////////////////////
 // var pdxAirportObj = {
