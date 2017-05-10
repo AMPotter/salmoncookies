@@ -63,8 +63,6 @@ Store.prototype.populateFooter = function() {
     var newTH = document.createElement('th');
     var newTextNode = document.createTextNode(this.salesTotal);
     getTF.appendChild(newTH);
-
-
     newTH.appendChild(newTextNode);
 }
 
