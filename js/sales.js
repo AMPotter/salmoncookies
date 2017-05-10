@@ -17,7 +17,8 @@ function Store (location, minCustomers, maxCustomers, salesAverage) {
     this.salesEstimate();
     this.calculateTotal();
     this.populateLocation();
-    this.populateSales();
+    this.populateFooter();
+    // this.populateSales();
 }
 
 //define universal values
@@ -55,27 +56,42 @@ Store.prototype.populateLocation = function() {
     newTH.appendChild(newTextNode);
 };
 
+//populate sales total
+Store.prototype.populateFooter = function() {
+    var getTF = document.getElementById('totalrow');
+    console.log('populate footer');
+    var newTH = document.createElement('th');
+    var newTextNode = document.createTextNode(this.salesTotal);
+    getTF.appendChild(newTH);
+
+
+    newTH.appendChild(newTextNode);
+}
+
 //populate sales figures
-Store.prototype.populateSales = function() {
-    for (var i = 0; i < hoursArray; i++) { //Loop through array of hours
+function populateSales() {
+    var tableBody = document.getElementById('tbody'); //link to table body, maybe this works??
+    for (var i = 0; i < hoursArray.length; i++) { //Loop through array of hours
+        console.log('looping through popSales');
         var newTR = document.createElement('tr'); //create table row
         var newTD = document.createElement('td'); //create table data
         var newTextNode = document.createTextNode(hoursArray[i]); //create text node containing current index of hours array
-        newTD.appendChild(newTextNode); //append text node to the table data cell
+        tableBody.appendChild(newTR); //  Just trying this out??
         newTR.appendChild(newTD); //append the data cell to the table row
+        newTD.appendChild(newTextNode); //append text node to the table data cell
 
         
-        for (var h = 0; h < storesArray; h++) {
-            var tableBody = document.getElementById('tableBody'); //link to table body
+        for (var h = 0; h < storesArray.length; h++) {
+            console.log('looping through popSales part 2');
             var salesTD = document.createElement('td'); //create sales data cell
-            var cellData = storesArray[h].hoursArray[i]; //create data FOR the cell // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
+            var cellData = storesArray[h].hourlySales[i]; //create data FOR the cell // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
             var salesTextNode = document.createTextNode(cellData); //create text node with cell data in it
-            tableBody.appendChild(newTR);
             salesTD.appendChild(salesTextNode); //append text node to data cell
             newTR.appendChild(salesTD); //append data cell to table row
         }
     }
 };
+
 
         // console.log('looping through popSale');
         // var newEl = document.createElement('tr')[i]; //create table row
@@ -91,6 +107,9 @@ var pioneerSquareObj = new Store ('Pioneer Square', 3, 24, 1.2);
 var powellsObj = new Store ('Powell\'s', 11, 38, 3.7);
 var stJohnsObj = new Store ('St. John\'s', 20, 38, 2.3);
 var waterfrontObj = new Store ('Waterfront', 2, 16, 4.6);
+
+populateSales();
+
 // pdxAirportObj.populateSales();
 // pioneerSquareObj.populateSales();
 // powellsObj.populateSales();
