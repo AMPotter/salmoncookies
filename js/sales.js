@@ -66,11 +66,13 @@ Store.prototype.populateSales = function() {
 
         
         for (var h = 0; h < storesArray; h++) {
-            var salesTD = document.createElement('td');
-            var cellData = storesArray[h].hoursArray[i]; // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
-            var salesTextNode = document.createTextNode(cellData);
-            salesTD.appendChild(salesTextNode);
-            newTR.appendChild(salesTD);
+            var tableBody = document.getElementById('tableBody'); //link to table body
+            var salesTD = document.createElement('td'); //create sales data cell
+            var cellData = storesArray[h].hoursArray[i]; //create data FOR the cell // ERROR OCCURS HERE (h is undefined/0) ERROR FIXED BY REMOVING .length FROM storesArray IN LOOP SETUP
+            var salesTextNode = document.createTextNode(cellData); //create text node with cell data in it
+            tableBody.appendChild(newTR);
+            salesTD.appendChild(salesTextNode); //append text node to data cell
+            newTR.appendChild(salesTD); //append data cell to table row
         }
     }
 };
