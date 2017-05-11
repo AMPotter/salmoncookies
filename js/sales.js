@@ -12,7 +12,7 @@ function Store (location, minCustomers, maxCustomers, salesAverage) {
     this.maxCustomers = maxCustomers;
     this.salesAverage = salesAverage;
     this.hourlySales = [];
-    
+
     //upon creation, do these
     storesArray.push(this);
     this.salesEstimate();
@@ -63,7 +63,7 @@ Store.prototype.populateFooter = function() {
     var newTextNode = document.createTextNode(this.salesTotal);
     getTF.appendChild(newTH);
     newTH.appendChild(newTextNode);
-}
+};
 
 //populate sales figures
 function populateSales() {
@@ -87,7 +87,29 @@ function populateSales() {
             newTR.appendChild(salesTD); //append data cell to table row
         }
     }
-};
+}
+
+//Set up event handlers and listeners for form
+
+var salesForm = document.getElementById('salesForm');
+salesForm.addEventListener('submit', addNewStore);
+
+function addNewStore() {
+    event.preventDefault();
+    var salesForm = event.target;
+    var locationInput = document.getElementById('locationInput').value;
+    var minCustomersInput = parseInt(document.getElementById('minCustomersInput').value);
+    var maxCustomersInput = parseInt(document.getElementById('maxCustomersInput').value);
+    var salesAverageInput = parseInt(document.getElementById('salesAverageInput').value);
+    var submitButton = document.getElementById(submitButton);
+    var newStore = new Store(locationInput, minCustomersInput, maxCustomersInput, salesAverageInput);
+    newStore.salesEstimate();
+    newStore.calculateTotal();
+    newStore.push(storesArray)[0];
+    newStore.populateLocation();
+    newStore.populateFooter();
+    newStore.populateSales();
+}
 
 //create object instances for store locations
 
@@ -97,4 +119,6 @@ var powellsObj = new Store ('Powell\'s', 11, 38, 3.7);
 var stJohnsObj = new Store ('St. John\'s', 20, 38, 2.3);
 var waterfrontObj = new Store ('Waterfront', 2, 16, 4.6);
 
+
+//call these functions on page load
 populateSales();
