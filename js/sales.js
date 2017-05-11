@@ -105,11 +105,16 @@ function addNewStore() {
     var newStore = new Store(locationInput, minCustomersInput, maxCustomersInput, salesAverageInput);
     newStore.salesEstimate();
     newStore.calculateTotal();
-    // storesArray.push(newStore);
-    // newStore.populateLocation();
-    newStore.populateFooter();
+    clearTable();
     populateSales();
 }
+
+//clear table function
+function clearTable() {
+    var tbody = document.getElementById('tbody');
+    tbody.innerHTML = '';
+};
+
 
 //create object instances for store locations
 
