@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/sales.css">
     </head>
     <body>
@@ -20,6 +23,17 @@
                 </tr>
             </tfoot>
         </table>
+
+        <form id="salesForm">
+            <fieldset>
+                <h3>Create New Store Location</h3>
+                <p>Location Name: <input id="locationInput" type="text" name="location"/> </p>
+                <p>Minimum Customers: <input id="minCustomersInput" type="text" name="minCustomers"/></p>
+                <p>Maximum Customers: <input id="maxCustomersInput" type="text" name="maxCustomers"/></p>
+                <p>Average Cookie Quantity Per Order: <input id="salesAverageInput" type="text" name="salesAverage"/></p>
+                <p><input id="submitButton" type="submit" name="submit" value="Generate Store"/></p>
+            </fieldset>
+        </form>
 
         <script type="text/javascript" src="js/sales.js"></script>
     </body>
