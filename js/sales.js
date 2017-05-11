@@ -66,8 +66,8 @@ Store.prototype.populateFooter = function() {
 };
 
 //populate sales figures
-function populateSales() {
     var tableBody = document.getElementById('tbody'); //link to table body, maybe this works??
+function populateSales() {
     for (var i = 0; i < hoursArray.length; i++) { //Loop through array of hours
         console.log('looping through popSales');
         var newTR = document.createElement('tr'); //create table row
