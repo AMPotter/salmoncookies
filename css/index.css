@@ -1,0 +1,21 @@
+* {
+}
+
+body {
+    background-color: #bbbbbb;
+}
+
+header {
+    background-color: #ffa07a;
+    text-align: center;
+}
+
+header #salmonpng {
+    max-width: 100%;
+    height: auto;
+    background-color: #ffa07a;
+}
+
+.nav-link {
+    color: white;   
+}
