@@ -18,6 +18,17 @@ header #salmonpng {
     height: auto;
 }
 
+footer {
+    background-color: #ffa07a;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    flex: 1;
+    font-size: 12pt;
+}
+
 .nav-link {
     color: black;
 }
@@ -29,13 +40,16 @@ header #salmonpng {
 }
 
 #para-div-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
     margin: auto;
     text-align: center;
-    width: 50%;
+    width: 80%;
 }
 
-.sub-paragraph-div {
-    display: inline-block;
+.sub-paragraph {
+    padding: 15%;
 }
 
 #serving-since {
