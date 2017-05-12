@@ -1,4 +1,5 @@
 * {
+
 }
 
 body {
@@ -8,14 +9,37 @@ body {
 header {
     background-color: #ffa07a;
     text-align: center;
+    color: black;
+    font-size: 16pt;
 }
 
 header #salmonpng {
     max-width: 100%;
     height: auto;
-    background-color: #ffa07a;
 }
 
 .nav-link {
-    color: white;   
+    color: black;
+}
+
+#splash-div {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+#para-div-container {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+.sub-paragraph-div {
+    display: inline-block;
+}
+
+#serving-since {
+    margin: auto;
+    text-align: center;    
+    font-size: 40pt;
 }
