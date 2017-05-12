@@ -1,0 +1,59 @@
+* {
+
+}
+
+body {
+    background-color: #bbbbbb;
+}
+
+header {
+    background-color: #ffa07a;
+    text-align: center;
+    color: black;
+    font-size: 16pt;
+}
+
+header #salmonpng {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #ffa07a;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    flex: 1;
+    font-size: 12pt;
+}
+
+.nav-link {
+    color: black;
+}
+
+#splash-div {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+#para-div-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.sub-paragraph {
+    padding: 15%;
+}
+
+#serving-since {
+    margin: auto;
+    text-align: center;    
+    font-size: 40pt;
+}

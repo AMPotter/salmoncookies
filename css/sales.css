@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    text-align: center;
+}
+
+#fieldsetDiv {
+vertical-align: middle;
+margin: auto;
+text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#submitButton {
+    color: black;
+    background-color: #ffa07a;
+}

@@ -115,9 +115,7 @@ function clearTable() {
     tbody.innerHTML = '';
 };
 
-
 //create object instances for store locations
-
 var pdxAirportObj = new Store ('PDX Airport', 23, 65, 6.3);
 var pioneerSquareObj = new Store ('Pioneer Square', 3, 24, 1.2);
 var powellsObj = new Store ('Powell\'s', 11, 38, 3.7);
