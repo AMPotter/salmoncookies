@@ -9,6 +9,12 @@ table {
 
 #fieldsetDiv {
 vertical-align: middle;
+margin: auto;
+text-align: center;
+}
+
+h3 {
+    text-align: center;
 }
 
 #submitButton {
