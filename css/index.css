@@ -57,3 +57,24 @@ footer {
     text-align: center;    
     font-size: 40pt;
 }
+
+#familydiv {
+    margin: 0 30%;
+}
+
+#familyimage {
+    height: 100%;
+    width: 100%;
+}
+
+#aboutpatdiv {
+    margin: 0 20%;
+}
+
+#aboutpatdiv h1 {
+    text-align: center;
+}
+
+#aboutpatdiv p {
+    text-indent: 20pt;
+}
