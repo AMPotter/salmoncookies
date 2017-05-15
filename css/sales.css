@@ -9,8 +9,8 @@ table {
 
 #fieldsetDiv {
 vertical-align: middle;
-margin: auto;
-text-align: center;
+margin: 0 20%;
+text-align: right;
 }
 
 h3 {
@@ -20,4 +20,19 @@ h3 {
 #submitButton {
     color: black;
     background-color: #ffa07a;
+}
+
+table {
+    border: 2px solid black;
+    margin: auto;
+}
+
+th {
+    padding: 5px;
+    margin: 5px;
+}
+
+td {
+    padding: 5px;
+    margin: 5px;
 }
