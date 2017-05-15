@@ -1,0 +1,12 @@
+h1, h4, h5, p {
+    text-align: center;
+}
+
+.shopitem {
+    margin: 0 30%;
+}
+
+.shopitem img{
+    display: block;
+    margin: 0 auto;
+}
